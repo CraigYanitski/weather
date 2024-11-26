@@ -21,7 +21,7 @@ https://github.com/mourner/simpleheat
         this._ctx = this._canvas.getContext("2d");
         this._width = this._canvas.width;
         this._height = this._canvas.height;
-        this._max = 1;
+        this._max = 10;
         this.clear();
     }
 
@@ -282,8 +282,9 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
                     cell[0] = (cell[0] * cell[2] + point.x * alt) / (cell[2] + alt);
                     cell[1] = (cell[1] * cell[2] + point.y * alt) / (cell[2] + alt);
                     cell[2] += alt;
+					cell[3] += 1;
                 } else {
-                    grid[y][x] = [point.x, point.y, alt];
+                    grid[y][x] = [point.x, point.y, alt, 1];
                 }
                 max = Math.max(max, alt);
             }
