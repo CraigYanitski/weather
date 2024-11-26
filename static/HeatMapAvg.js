@@ -307,7 +307,7 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
                 cell = grid[y][x];
 
                 if (!cell) {
-                    grid[y][x] = [p.x, p.y, k];
+                    grid[y][x] = [p.x, p.y, k, 1];
 
                 } else {
                     cell[0] = (cell[0] * cell[2] + p.x * k) / (cell[2] + k); // x
