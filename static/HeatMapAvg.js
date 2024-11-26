@@ -1,6 +1,6 @@
-'use strict';
+!function(){'use strict';
 
-if (typeof module !== 'undefined') module.exports = simpleheat;
+//if (typeof module !== 'undefined') module.exports = simpleheat;
 
 function simpleheat(canvas) {
     if (!(this instanceof simpleheat)) return new simpleheat(canvas);
@@ -69,10 +69,10 @@ simpleheat.prototype = {
         return this;
     },
 
-    resize: function () {
-        this._width = this._canvas.width;
-        this._height = this._canvas.height;
-    },
+    //resize: function () {
+    //    this._width = this._canvas.width;
+    //    this._height = this._canvas.height;
+    //},
 
     gradient: function (grad) {
         // create a 256x1 gradient that we'll use to turn a grayscale heatmap into a colored one
@@ -130,16 +130,16 @@ simpleheat.prototype = {
         }
     },
 
-    _createCanvas: function () {
-        if (typeof document !== 'undefined') {
-            return document.createElement('canvas');
-        } else {
-            // create a new canvas instance in node.js
-            // the canvas class needs to have a default constructor without any parameter
-            return new this._canvas.constructor();
-        }
-    }
-};
+    //_createCanvas: function () {
+    //    if (typeof document !== 'undefined') {
+    //        return document.createElement('canvas');
+    //    } else {
+    //        // create a new canvas instance in node.js
+    //        // the canvas class needs to have a default constructor without any parameter
+    //        return new this._canvas.constructor();
+    //    }
+    //}
+},window.simpleheat=simpleheat};
 
 L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
 
