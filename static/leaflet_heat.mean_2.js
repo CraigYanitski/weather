@@ -267,7 +267,7 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
             var bounds = new L.Bounds(L.point([-r, -r]), size.add([r, r]));
             var cellSize = r / 2;
             var grid = [];
-            var max = 1;
+            var max = 10;
 
             for (var i = 0, len = this._latlngs.length; i < len; i++) {
                 var latlng = this._latlngs[i];
