@@ -66,7 +66,9 @@ def add_heatmap(m):
     longitude: pd.Series = df_red.Longitude.apply(lambda x: -float(x[:-1]))
     latitude: pd.Series = df_red.Latitude.apply(lambda x: float(x[:-1]))
     HeatMap(
-        list(zip(latitude, longitude, np.ones_like(latitude)))).add_to(m)
+        list(zip(latitude, longitude, np.ones_like(latitude))),
+        min_opacity=0.1,
+    ).add_to(m)
     return m
 
 external_stylesheets: list[str] = [dbc.themes.DARKLY, dbc.themes.CYBORG]
