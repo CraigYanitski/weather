@@ -6,7 +6,8 @@ import pandas as pd
 import geopandas
 from matplotlib import pyplot as plt
 import folium
-from folium.plugins import HeatMap, MarkerCluster
+from folium.plugins import MarkerCluster
+from heat_map_mean import HeatMap
 import xyzservices.providers as xyzp
 import os
 from flask import render_template_string
