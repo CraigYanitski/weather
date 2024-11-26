@@ -59,7 +59,8 @@ class HeatMap(JSCSSMixin, Layer):
             # "leaflet-heat.js",
             # "https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js",
             "leaflet-heat.js",
-            "https://cdn.jsdelivr.net/gh/CraigYanitski/weather/static/leaflet_heat.mean.js",
+            #"https://cdn.jsdelivr.net/gh/CraigYanitski/weather/static/leaflet_heat.mean.js",
+            "https://cdn.jsdelivr.net/gh/CraigYanitski/weather/static/HeatMapAvg.js",
         ),
     ]
 
