@@ -281,10 +281,10 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
                 if (cell) {
                     cell[0] = (cell[0] * cell[2] + point.x * alt) / (cell[2] + alt);
                     cell[1] = (cell[1] * cell[2] + point.y * alt) / (cell[2] + alt);
-                    cell[2] += alt;
-					cell[3] += 1;
+                    cell[2] += 1;
+					//cell[3] += 1;
                 } else {
-                    grid[y][x] = [point.x, point.y, alt, 1];
+                    grid[y][x] = [point.x, point.y, 1];
                 }
                 max = Math.max(max, alt);
             }
