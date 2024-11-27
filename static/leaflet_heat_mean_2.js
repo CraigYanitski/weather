@@ -266,9 +266,9 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
             var size = this._map.getSize();
             var bounds = new L.Bounds(L.point([-r, -r]), size.add([r, r]));
             var cellSize = r / 2;
-            var data 
+            var data = [];
             var grid = [];
-			var cgrid = [];
+            var cgrid = [];
             var max = 10;
 
             for (var i = 0, len = this._latlngs.length; i < len; i++) {
@@ -279,15 +279,15 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
 
                 var alt = 1;//latlng.alt !== undefined ? latlng.alt : (latlng[2] !== undefined ? +latlng[2] : 1);
                 grid[y] = grid[y] || [];
-				cgrid[y] = [];
+                cgrid[y] = [];
                 var cell = grid[y][x];
-				var count = cgrid[y][x];
+                var count = cgrid[y][x];
                 if (cell) {
                     cell[0] = (cell[0] * cell[2] + point.x * alt) / (cell[2] + alt);
                     cell[1] = (cell[1] * cell[2] + point.y * alt) / (cell[2] + alt);
                     cell[2] += alt;
-					//cell[3] += 1;
-					count += 1;
+                    //cell[3] += 1;
+                    count += 1;
                 } else {
                     grid[y][x] = [point.x, point.y, alt];
 					count += 1;
@@ -302,7 +302,7 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
                         data.push([
                             cell[0],
                             cell[1],
-                            cell[2]/count
+                            cell[2]/count,
                         ]);
                     }
                 }
