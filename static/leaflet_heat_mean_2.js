@@ -300,8 +300,8 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
                         cell = grid[i][j];
                         count = cgrid[i][j];
                         data.push([
-                            cell[0],
-                            cell[1],
+                            Math.round(cell[0]),
+                            Math.round(cell[1]),
                             cell[2]/count,
                         ]);
                     }
