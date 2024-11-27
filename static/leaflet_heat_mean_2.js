@@ -275,7 +275,7 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
                 var x = Math.floor(point.x / cellSize) + 2;
                 var y = Math.floor(point.y / cellSize) + 2;
 
-                var alt = latlng.alt !== undefined ? latlng.alt : (latlng[2] !== undefined ? +latlng[2] : 1);
+                var alt = 1;//latlng.alt !== undefined ? latlng.alt : (latlng[2] !== undefined ? +latlng[2] : 1);
                 grid[y] = grid[y] || [];
                 var cell = grid[y][x];
                 if (cell) {
@@ -286,7 +286,7 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
                 } else {
                     grid[y][x] = [point.x, point.y, alt];
                 }
-                max = Math.max(max, alt);
+                max = 5;//Math.max(max, alt);
             }
 
             this._heat.data(grid.flat()).max(max).draw(this.options.minOpacity);
