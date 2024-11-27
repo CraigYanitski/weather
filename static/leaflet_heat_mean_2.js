@@ -286,7 +286,7 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
                 } else {
                     grid[y][x] = [point.x, point.y, alt];
                 }
-                max = 5;//Math.max(max, alt);
+                max = Math.max(max, alt);
             }
 
             this._heat.data(grid.flat()).max(max).draw(this.options.minOpacity);
