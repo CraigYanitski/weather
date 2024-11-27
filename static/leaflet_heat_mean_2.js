@@ -277,7 +277,7 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
                 var x = Math.floor(point.x / cellSize) + 2;
                 var y = Math.floor(point.y / cellSize) + 2;
 
-                var alt = 1;//latlng.alt !== undefined ? latlng.alt : (latlng[2] !== undefined ? +latlng[2] : 1);
+                var alt = latlng.alt !== undefined ? latlng.alt : (latlng[2] !== undefined ? +latlng[2] : 1);
                 grid[y] = grid[y] || [];
                 cgrid[y] = [];
                 var cell = grid[y][x];
@@ -292,7 +292,7 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
                     grid[y][x] = [point.x, point.y, alt];
 					count += 1;
                 }
-                max = 5;//Math.max(max, alt);
+                max = Math.max(max, alt);
             }
 			for (var i = 0, len = grid.len; i < len; i++) {
                 if grid[i] {
