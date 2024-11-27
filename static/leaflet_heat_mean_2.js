@@ -284,7 +284,7 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
                     cell[2] += alt;
 					//cell[3] += 1;
                 } else {
-                    grid[y][x] = [point.x, point.y, 1];
+                    grid[y][x] = [point.x, point.y, alt];
                 }
                 max = 25;//Math.max(max, alt);
             }
